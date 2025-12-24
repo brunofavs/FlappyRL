@@ -32,7 +32,7 @@ class FlappyBird(gym.Env):
         return { }
 
 
-    # https://chatgpt.com/s/t_694b5f4d79c081918371fd8e67d84dcb
+    # https://chatgpt.com/share/694b61f1-0cf4-8011-9687-2abc22e5df2b
     def reset(self, *, seed: int | None = None, options: dict | None = None):
         """Start a new episode.
 
