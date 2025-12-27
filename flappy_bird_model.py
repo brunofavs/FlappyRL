@@ -19,7 +19,7 @@ class FlappyBird(gym.Env):
         # Initialize positions - will be set randomly in reset()
 
         # Define what the agent can observe, Placeholder
-        self.observation_space = gym.spaces.Discrete(8)
+        self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(2,), dtype=np.float32)
 
         # Define what actions are available (0: do nothing, 1: flap)
         self.action_space = gym.spaces.Discrete(2)
@@ -46,7 +46,7 @@ class FlappyBird(gym.Env):
         bird_y = self.bird.y
 
 
-        return {}
+        return np.array([1,1], dtype=np.float32)
 
     def _get_info(self):
         """Compute auxiliary information for debugging.
@@ -54,14 +54,14 @@ class FlappyBird(gym.Env):
         Returns:
             dict: Info with distance between agent and target
         """
-        return { }
+        return {}
 
 
     # https://chatgpt.com/share/694b61f1-0cf4-8011-9687-2abc22e5df2b
     def reset(self, *, seed: int | None = None, options: dict | None = None):
         """Start a new episode.
 
-        Args:
+       Args:
             seed: Random seed for reproducible episodes
             options: Additional configuration (unused in this example)
 
@@ -102,8 +102,6 @@ class FlappyBird(gym.Env):
 
     def step(self, action):
         """Execute one timestep within the environment.
-
-        Args:
             action: The action to take (0-3 for directions)
 
         Returns:
