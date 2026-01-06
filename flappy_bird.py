@@ -44,6 +44,7 @@ class Bird(pygame.sprite.Sprite):
         execute a complete climb.
     """
 
+    # Controls pipe gap
     WIDTH = HEIGHT = 48
     SINK_SPEED = 0.18
     CLIMB_SPEED = 0.3

@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+'''
+Version 0 of Flappy Bird environment for Reinforcement Learning.
+
+This environment uses a fixed reward and the scale is wrong. There is not enough
+incentive to clear pipes, so the agent will learn to just stay alive.
+'''
+
 # Imports for RL
 import numpy as np
 import gymnasium as gym
